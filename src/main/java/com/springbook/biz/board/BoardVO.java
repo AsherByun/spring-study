@@ -8,7 +8,7 @@ public class BoardVO {
 	private String writer;
 	private String content;
 	private Date regDate;
-	private int cng;
+	private int cnt;
 
 	public int getSeq() {
 		return seq;
@@ -50,11 +50,11 @@ public class BoardVO {
 		this.regDate = regDate;
 	}
 
-	public int getCng() {
-		return cng;
+	public int getCnt() {
+		return cnt;
 	}
 
-	public void setCng(int cng) {
-		this.cng = cng;
+	public void setCnt(int cng) {
+		this.cnt = cng;
 	}
 }
