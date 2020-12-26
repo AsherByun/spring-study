@@ -2,6 +2,7 @@ package com.springbook.biz.board;
 
 import java.sql.Date;
 
+//VO(Value Object)
 public class BoardVO {
 	private int seq;
 	private String title;
@@ -54,7 +55,13 @@ public class BoardVO {
 		return cnt;
 	}
 
-	public void setCnt(int cng) {
-		this.cnt = cng;
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
+
+	@Override
+	public String toString() {
+		return "BoardVO [seq=" + seq + ", title=" + title + ", writer=" + writer + ", content=" + content + ", regDate="
+				+ regDate + ", cnt=" + cnt + "]";
 	}
 }
