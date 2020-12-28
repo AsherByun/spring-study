@@ -8,15 +8,33 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
 
-	<context:component-scan base-package="com.springbook.biz"></context:component-scan>
-	
+	<context:component-scan
+		base-package="com.springbook.biz"></context:component-scan>
+
 	<bean id="log" class="com.springbook.biz.common.Log4jAdvice"></bean>
-	
-	<aop:config>
-		<aop:pointcut id="allPointcut" expression="execution(* com.springbook.biz..*Impl.*(..))"></aop:pointcut>
-		<aop:pointcut id="getPointcut" expression="execution(* com.springbook.biz..*Impl.get*(..))"/>
+
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+<!-- 	<aop:config>
+		<aop:pointcut id="allPointcut"
+			expression="execution(* com.springbook.biz..*Impl.*(..))"></aop:pointcut>
+		<aop:pointcut id="getPointcut"
+			expression="execution(* com.springbook.biz..*Impl.get*(..))" />
 		<aop:aspect ref="log">
-			<aop:before pointcut-ref="allPointcut" method="printLog"/>
+			<aop:before pointcut-ref="allPointcut" method="printLog" />
 		</aop:aspect>
 	</aop:config>
+ -->
+	<bean destroy-method="close"
+		class="org.apache.commons.dbcp.BasicDataSource" id="dataSource">
+
+		<property value="org.h2.Driver" name="driverClassName" />
+
+		<property value="jdbc:h2:tcp://localhost/~/test" name="url" />
+
+		<property value="sa" name="username" />
+
+		<property value="" name="password" />
+
+	</bean>
 </beans>
