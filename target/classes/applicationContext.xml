@@ -24,13 +24,9 @@
 		</aop:config> -->
 	<bean destroy-method="close"
 		class="org.apache.commons.dbcp.BasicDataSource" id="dataSource">
-
 		<property value="org.h2.Driver" name="driverClassName" />
-
 		<property value="jdbc:h2:tcp://localhost/~/test" name="url" />
-
 		<property value="sa" name="username" />
-
 		<property value="" name="password" />
 
 	</bean>

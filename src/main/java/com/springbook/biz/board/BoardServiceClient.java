@@ -15,9 +15,9 @@ public class BoardServiceClient {
 		
 		//테스트
 		BoardVO vo = new BoardVO();
-		vo.setTitle("임시제목");
-		vo.setWriter("홍길동");
-		vo.setContent("teststesetesetse");
+		vo.setTitle("임시제목1");
+		vo.setWriter("홍길동1");
+		vo.setContent("teststesetesetse1");
 		boardService.insertBoard(vo);
 		
 		List<BoardVO> boardList = boardService.getBoardList(vo);
